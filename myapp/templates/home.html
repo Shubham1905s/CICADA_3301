@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home - My Website
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+
+<div class="home-container">
+    <div class="auth-card">
+        <div class="auth-logo">
+            <div class="logo-box">CICADA 3301</div>
+        </div>
+        <h2 class="welcome-text">Welcome!</h2>
+        <form class="auth-form" method="post">
+            {% csrf_token %}
+            <input type="text" class="form-control mb-3" name="team_name" placeholder="Team Name" required>
+            <input type="password" class="form-control mb-3" name="password" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary auth-button">Log in</button>
+        </form>
+        <footer class="website-link">
+            <a>ALL THE BEST!</a>
+        </footer>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styles */
+/* .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+} */
+
+
+.navbar {
+    position: fixed; /* Keeps navbar at the top of the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+    z-index: 1000; /* Makes sure navbar is always on top */
+}
+.navbar__logo img {
+    height: 50px;
+}
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar__item {
+    margin-left: 20px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar__link:hover {
+    color: #f99e4c;
+}
+
+/* Main content styles */
+main {
+    padding: 100px 20px 20px; /* Add padding-top to make space for the fixed navbar */
+    min-height: calc(100vh - 180px); /* Adjust main height to leave room for header and footer */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}

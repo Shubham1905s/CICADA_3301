@@ -1,0 +1,48 @@
+<!-- templates/base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'myapp:home' %}">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'myapp:About' %}">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'myapp:results' %}">Result</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'admin:index' %}">Admin</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Block -->
+    <main>
+        {% block content %}
+        <!-- Content from child templates will be rendered here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
